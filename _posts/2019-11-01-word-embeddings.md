@@ -135,6 +135,24 @@ architecture of the Word2vec Skip-gram model.
 
 * [fastText pre-trained model](https://fasttext.cc/)
 
+# Contextualised Word Embeddings
+
+## ELMo
+
+*original papar:
+[Deep contextualized word representations](https://arxiv.org/pdf/1802.05365.pdf)*
+
+ELMo ("Embeddings from Language MOdels") is a deep contextualized word
+representation. ELMo models the characteristics of word use (syntax and
+semantics) and polysemy (different uses of words across linguistics contexts).
+These word vectors are computed from the internal states of a two layers
+bidirectional language model (biLM), which is pre-trained on a large text
+corpus. Different layers of the language models encode different linguistic
+aspects on the word; For example, Part-Of-Speech is better encoded by the
+lower-level layers, while word-sense disambiguation is better predicted in the
+higher-level layers.
+
+
 # References
 
 * Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin, "A neural probabilistic
