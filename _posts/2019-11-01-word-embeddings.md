@@ -27,14 +27,16 @@ training word embeddings starting with Word2vec.
 
 ## Word Embeddings
 
-The idea of word embeddings is first proposed by Bengio et al., and the gist of
-it has not been changed drastically until now; We encode words into
-fixed-length vector representations which can be used to solve many
-computational linguistic problems such as question answering, text
-classfication, language translations, and so on. This encoding model is based
-on the distributional hypothesis: linguistic items with similar distributions
-in the vector space have similar meanings.
+The idea of word embeddings is first proposed by [Bengio et
+al.](http://me.jiho.us/bookmarks.html), and the gist of it has not been changed
+drastically until now; We encode words into fixed-length vector representations
+which can be used to solve many computational linguistic problems such as
+question answering, text classfication, language translations, and so on. This
+encoding model is based on the distributional hypothesis: linguistic items with
+similar distributions in the vector space have similar meanings.
 
+![Word vectors in 2-dimensional; similar words have similar
+vectors](http://me.jiho.us/images/posts/word-vectors-2d.png)
 
 # References
 
