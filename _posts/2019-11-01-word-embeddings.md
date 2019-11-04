@@ -35,7 +35,7 @@ question answering, text classfication, language translations, and so on. This
 encoding model is based on the distributional hypothesis: linguistic items with
 similar distributions in the vector space have similar meanings.
 
-![Word vectors in 2-dimensional](https://me.jiho.us/images/posts/word-vectors-2d.png)
+![Word vectors in 2-dimensional](https://me.jiho.us/images/posts/word-vectors-2d.png)  
 *Figure. Word vectors in 2-dimensional; similar words have similar vectors 
 ([image source](http://suriyadeepan.github.io))*
 
@@ -159,3 +159,14 @@ higher-level layers.
   language model," Journal of machine learning research, vol. 3, no. Feb, pp.
   1137–1155, 2003.
   \[[pdf](http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)\]
+* Mikolov, Tomas, et al. "Efficient estimation of word representations in
+  vector space." arXiv preprint arXiv:1301.3781 (2013).
+  \[[pdf](https://arxiv.org/pdf/1301.3781.pdf)\]
+* Zhang, Xiang, Junbo Zhao, and Yann LeCun. "Character-level convolutional
+  networks for text classification." Advances in neural information processing
+  systems. 2015.
+  \[[pdf](https://papers.nips.cc/paper/5782-character-level-convolutional-networks-for-text-classification.pdf)\]
+* Bojanowski, Piotr, et al. "Enriching word vectors with subword information."
+  Transactions of the Association for Computational Linguistics 5 (2017):
+  135-146. 
+  \[[pdf](https://www.mitpressjournals.org/doi/pdfplus/10.1162/tacl_a_00051)\]
