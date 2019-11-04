@@ -36,7 +36,7 @@ encoding model is based on the distributional hypothesis: linguistic items with
 similar distributions in the vector space have similar meanings.
 
 ![Word vectors in 2-dimensional](https://me.jiho.us/images/posts/word-vectors-2d.png)
-*Word vectors in 2-dimensional; similar words have similar vectors 
+*Figure. Word vectors in 2-dimensional; similar words have similar vectors 
 ([image source](http://suriyadeepan.github.io))*
 
 Now, the distribution of words in the vector space allows us to deliver the
@@ -81,14 +81,59 @@ center vector of the word, and the output layer contains the scores which can
 be interpreted as a probability distribution of words that are likely to be
 seen in the target word’s context.
 
-![CBOW and Skip-gram Model](https://me.jiho.us/images/cbow-skipgram.png)
-*CBOW and Skip-gram Model*
+![CBOW and Skip-gram Model](https://me.jiho.us/images/posts/cbow-skipgram.png)  
+*Figure. CBOW and Skip-gram Model*
 
 The goal of *Skip-gram* model is to predict context words by the given target
 word. The following negative log-likelihood loss function computes how the
 predicted context words are close to the observed list of words.
 
-$$ L = \sum_{c \in C_t} \log(1 + e^{-s_c}) + \sum_{n \in N_{t,c}} \log(1+e^{s_n}), $$
+$$ L = \sum_{c \in C_t} \log (1 + e^{-s_c}) + \sum_{n \in N_{t,c}} \log (1 + e^{s_n}), $$
+
+where the first term adds the loss of the context words and the second term
+adds the loss of the negative samples from the unigram distribution.
+
+One limitation of this method is that this model can't handle OOV
+(out-of-vocabulary) words, which have not occurred in a training dataset. The
+following two methods, *CharCNN* and *fastText*, address this issue by
+considering sub-word information in building word representations.
+
+## CharCNN
+
+*original paper: 
+[Character-level convolutional networks for text classification](https://papers.nips.cc/paper/5782-character-level-convolutional-networks-for-text-classification.pdf)*
+
+The authors of the *CharCNN* model claims that words can be represented by
+the use of character-level convolutional networks (ConvNets) for NLP tasks. The
+input sequence of words is mapped into the representations for its constituent
+characters. They fixed the set of characters to the union of 26 English
+characters, 10 digits, and 33 special characters. This model proved its
+strength in representing OOV words, misspelled words, new words, and emoticons.
+It also reduced model complexity by using a relatively small number of vector
+representations. Following figure illustrates the CharCNN model.
+
+![CharCNN Model](https://me.jiho.us/images/posts/CharCNN.png)  
+*Figure. Character-level Convolutional Networks*
+
+## fastText
+
+*original paper:
+[Enriching word vectors with subword information](https://www.mitpressjournals.org/doi/pdfplus/10.1162/tacl_a_00051)*
+
+*fastText* took a further step by constructing word representations by its
+constituent character-level n-grams.  Specifically to speak, the model
+represents a word as the sum of its character n-grams representations, plus a
+special boundary symbols at the beginning and end of words, plus the word
+itself in the set of its n-grams. For example, a word *fast* is composed of the
+following five n-grams, where n is set to 3:
+
+\<fa, fas, ast, st\>, \<fast\>
+
+With this model, grammatical variations that share most of n-grams, and
+compound nouns are easy to model. As to the rest, it shares the same
+architecture of the Word2vec Skip-gram model.
+
+* [fastText pre-trained model](https://fasttext.cc/)
 
 # References
 
