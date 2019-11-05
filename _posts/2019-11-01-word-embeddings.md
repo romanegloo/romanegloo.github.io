@@ -133,9 +133,19 @@ With this model, grammatical variations that share most of n-grams, and
 compound nouns are easy to model. As to the rest, it shares the same
 architecture of the Word2vec Skip-gram model.
 
-* [fastText pre-trained model](https://fasttext.cc/)
+* [Download fastText pre-trained model](https://fasttext.cc/)
 
 # Contextualised Word Embeddings
+
+One of the issues of static word embeddings is that the word vectors are fixed
+after training, which means that there can be only one fixed meaning of a word.
+Hence, these representations cannot handle the
+[polysemy](https://en.wikipedia.org/wiki/Polysemy) of natural languages. For
+example, the representative meaning of *bank* can be only one (whatever that is
+trained to) within the static word embeddings, nevertherless this word can have
+multiple senses; bank as a financial institute or a river bank. Following
+contextualised word embeddings are the attempts to address this issue in static
+word embeddings.
 
 ## ELMo
 
@@ -152,6 +162,9 @@ aspects on the word; For example, Part-Of-Speech is better encoded by the
 lower-level layers, while word-sense disambiguation is better predicted in the
 higher-level layers.
 
+![Model Architecture of TagLM](https://me.jiho.us/images/posts/taglm.png")
+
+The above figure illustrates 
 
 # References
 
