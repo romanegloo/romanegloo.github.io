@@ -89,8 +89,13 @@ center vector of the word, and the output layer contains the scores which can
 be interpreted as a probability distribution of words that are likely to be
 seen in the target word’s context.
 
-![CBOW and Skip-gram Model](https://me.jiho.us/images/posts/cbow-skipgram.png)  
-*Figure. CBOW and Skip-gram Model*
+<figure class="figure">
+    <img src="https://me.jiho.us/images/posts/cbow-skipgram.png" 
+         class="mx-auto d-block" alt="CBOW and Skip-gram Model"/>
+    <figcaption class="figure-caption">
+        Figure. CBOW and Skip-gram Model
+    </figcaption>
+</figure>
 
 The goal of *Skip-gram* model is to predict context words by the given target
 word. The following negative log-likelihood loss function computes how the
@@ -120,8 +125,10 @@ strength in representing OOV words, misspelled words, new words, and emoticons.
 It also reduced model complexity by using a relatively small number of vector
 representations. Following figure illustrates the CharCNN model.
 
-![CharCNN Model](https://me.jiho.us/images/posts/CharCNN.png)  
-*Figure. Character-level Convolutional Networks*
+<div class="text-center">
+  <img src="https://me.jiho.us/images/posts/CharCNN.png" class="d-block" alt="CharCNN Model">
+  <span>*Figure. Character-level Convolutional Networks*</span>
+</div>
 
 ## fastText
 
