@@ -225,8 +225,13 @@ There are several issues with the RNN type language modeling architectures, whic
 2. RNNs are hard to maintain the previously encoded knowledge in long-range sequence throughout the recurrence.
    Attention mechanisms allow modeling dependencies without regard to their distance in the input or output sequence.
 
-![The Transformer](https://me.jiho.us/images/posts/transformer.png)  
-*Figure, The Transformer (image from the original paper)*
+<div class="text-center mb-5">
+  <img src="https://me.jiho.us/images/posts/transformer.png"
+       class="mx-auto d-block" alt="The Transformer"/>
+  <div class="caption text-center">
+    Figure, The Transformer (image from the original paper)
+  </div>
+</div>
 
 As seen in the above figure, the Transformer also has two parts of the conventional machine translation architecutres; the left-side is the encoder, and the right-side is the decoder. 
 The input/output sequences are mapped to token representations.
