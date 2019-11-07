@@ -40,11 +40,11 @@ similar distributions in the vector space have similar meanings.
 
 <div class="text-center">
     <img src="https://me.jiho.us/images/posts/word-vectors-2d.png" 
-         alt="http://jalammar.github.io/illustrated-transformer/"/><br/>
-    <span>
+         alt="Word vectors in 2-dimensional" class="mx-auto d-block"/>
+    <div class="caption center-block">
         Word vectors in 2-dimensional; Similar words have similar vectors
         ([image source](http://suriyadeepan.github.io))
-    </span>
+    </div>
 </div>
 
 Now, the distribution of words in the vector space allows us to deliver the
