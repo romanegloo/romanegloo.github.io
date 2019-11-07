@@ -38,12 +38,12 @@ question answering, text classfication, language translations, and so on. This
 encoding model is based on the distributional hypothesis: linguistic items with
 similar distributions in the vector space have similar meanings.
 
-<div class="text-center">
+<div class="text-center mb-5">
     <img src="https://me.jiho.us/images/posts/word-vectors-2d.png" 
          alt="Word vectors in 2-dimensional" class="mx-auto d-block"/>
     <div class="caption center-block">
         Word vectors in 2-dimensional; Similar words have similar vectors
-        ([image source](http://suriyadeepan.github.io))
+        ([<a href="http://suriyadeepan.github.io">image source</a>])
     </div>
 </div>
 
@@ -89,13 +89,13 @@ center vector of the word, and the output layer contains the scores which can
 be interpreted as a probability distribution of words that are likely to be
 seen in the target word’s context.
 
-<figure class="figure">
+<div class="text-center mb-5">
     <img src="https://me.jiho.us/images/posts/cbow-skipgram.png" 
-         class="mx-auto d-block" alt="CBOW and Skip-gram Model"/>
-    <figcaption class="figure-caption">
+         alt="CBOW and Skip-gram Model" class="mx-auto d-block"/>
+    <div class="caption center-block">
         Figure. CBOW and Skip-gram Model
-    </figcaption>
-</figure>
+    </div>
+</div>
 
 The goal of *Skip-gram* model is to predict context words by the given target
 word. The following negative log-likelihood loss function computes how the
@@ -125,9 +125,10 @@ strength in representing OOV words, misspelled words, new words, and emoticons.
 It also reduced model complexity by using a relatively small number of vector
 representations. Following figure illustrates the CharCNN model.
 
-<div class="text-center">
-  <img src="https://me.jiho.us/images/posts/CharCNN.png" class="d-block" alt="CharCNN Model">
-  <span>*Figure. Character-level Convolutional Networks*</span>
+<div class="text-center mb-5">
+  <img src="https://me.jiho.us/images/posts/CharCNN.png"
+       class="mx-auto d-block" alt="CharCNN Model"/>
+  <div class="caption text-center">Figure. Character-level Convolutional Networks</div>
 </div>
 
 ## fastText
@@ -174,8 +175,14 @@ ELMo models the characteristics of word use (syntax and semantics) and polysemy 
 These word vectors are computed from the internal states of a two layers bidirectional language model (biLM), which is pre-trained on a large text corpus.
 Different layers of the language models encode different linguistic aspects on the word; For example, Part-Of-Speech is better encoded by the lower-level layers, while word-sense disambiguation is better predicted in the higher-level layers.
 
-![Model Architecture of TagLM](https://me.jiho.us/images/posts/taglm.png)  
-*Figure. Model Architecture of TagLM (image from this [paper](https://arxiv.org/pdf/1705.00108.pdf))*
+<div class="text-center mb-5">
+  <img src="https://me.jiho.us/images/posts/taglm.png"
+       class="mx-auto d-block" alt="Model Architecture of TagLM"/>
+  <div class="caption text-center">
+    Figure. Model Architecture of TagLM (image from this
+    [<a href="https://arxiv.org/pdf/1705.00108.pdf">paper</a>])
+  </div>
+</div>
 
 The above figure illustrates how a word in its context is tranformed into a contextualized embeddings and how the contextualized embeddings are being used along with the context-independent embeddings by concatenation. 
 
