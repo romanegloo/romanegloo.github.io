@@ -40,7 +40,7 @@ similar distributions in the vector space have similar meanings.
 
 <div class="text-center mb-5">
     <img src="https://me.jiho.us/images/posts/word-vectors-2d.png" 
-         alt="Word vectors in 2-dimensional" class="mx-auto d-block"/>
+         alt="Word vectors in 2-dimensional" class="img-fluid"/>
     <div class="caption center-block">
         Word vectors in 2-dimensional; Similar words have similar vectors
         ([<a href="http://suriyadeepan.github.io">image source</a>])
@@ -91,7 +91,7 @@ seen in the target word’s context.
 
 <div class="text-center mb-5">
     <img src="https://me.jiho.us/images/posts/cbow-skipgram.png" 
-         alt="CBOW and Skip-gram Model" class="mx-auto d-block"/>
+         alt="CBOW and Skip-gram Model" class="img-fluid"/>
     <div class="caption center-block">
         Figure. CBOW and Skip-gram Model
     </div>
@@ -127,7 +127,7 @@ representations. Following figure illustrates the CharCNN model.
 
 <div class="text-center mb-5">
   <img src="https://me.jiho.us/images/posts/CharCNN.png"
-       class="mx-auto d-block" alt="CharCNN Model"/>
+       class="img-fluid" alt="CharCNN Model"/>
   <div class="caption text-center">Figure. Character-level Convolutional Networks</div>
 </div>
 
@@ -177,7 +177,7 @@ Different layers of the language models encode different linguistic aspects on t
 
 <div class="text-center mb-5">
   <img src="https://me.jiho.us/images/posts/taglm.png"
-       class="mx-auto d-block" alt="Model Architecture of TagLM"/>
+       class="img-fluid" alt="Model Architecture of TagLM"/>
   <div class="caption text-center">
     Figure. Model Architecture of TagLM (image from this
     [<a href="https://arxiv.org/pdf/1705.00108.pdf">paper</a>])
@@ -227,7 +227,7 @@ There are several issues with the RNN type language modeling architectures, whic
 
 <div class="text-center mb-5">
   <img src="https://me.jiho.us/images/posts/transformer.png"
-       class="mx-auto d-block" alt="The Transformer"/>
+       class="img-fluid" alt="The Transformer"/>
   <div class="caption text-center">
     Figure, The Transformer (image from the original paper)
   </div>
