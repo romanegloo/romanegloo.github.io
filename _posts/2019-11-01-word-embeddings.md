@@ -38,9 +38,14 @@ question answering, text classfication, language translations, and so on. This
 encoding model is based on the distributional hypothesis: linguistic items with
 similar distributions in the vector space have similar meanings.
 
-![Word vectors in 2-dimensional](https://me.jiho.us/images/posts/word-vectors-2d.png)  
-*Figure. Word vectors in 2-dimensional; similar words have similar vectors 
-([image source](http://suriyadeepan.github.io))*
+<figure class="figure">
+    <img src="https://me.jiho.us/images/posts/word-vectors-2d.png" 
+      class="mx-auto d-block" alt="http://jalammar.github.io/illustrated-transformer/">
+    <figcaption class="figure-caption">
+        Word vectors in 2-dimensional; Similar words have similar vectors
+        ([image source](http://suriyadeepan.github.io))
+    </figcaption>
+</figure>
 
 Now, the distribution of words in the vector space allows us to deliver the
 semantics of words by means of computing the relationships (e.g., difference)
@@ -239,6 +244,9 @@ $$
 unidirection/bidirection how to train
 
 
+### Pointers
+
+* [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
 
 
 # References
