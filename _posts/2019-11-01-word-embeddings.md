@@ -227,15 +227,15 @@ Transformer encoders.
 
 ### The Transformer: 
 
-This method is first introduced in the 
-[Attention is All You Need](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)
-paper. In 2017, a Google Brain team (Vaswani et al.) proposed this network
-for machine translation. Traditionally, for language translation, RNNs were
-used for encoding a seqauence of words. In Transformer, the recurrence
-component is replaced with multi-layer attention encoders.
+This method is first introduced in the paper, [Attention is All You
+Need](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf), by a
+Google Brain team (Vaswani et al.) which model is for machine translation.
+Traditionally, for language translation, RNNs were used for encoding
+seqauences of words. In Transformer, the recurrence component is replaced with
+multi-layer attention encoders (Transformers).
 
-There are several issues with the RNN-based language modeling architectures,
-which Transformer-based models were able to resolve.
+There exist several issues with the RNN-based language modeling architectures,
+which Transformer-based models might be able to resolve.
 
 1. RNNs are difficult to parallelize computations to utilize GPU capability.
 That is, the current state of the recurrence is dependent on the previous
@@ -253,43 +253,71 @@ sequence.
   </div>
 </div>
 
-As seen in the above figure, the Transformer also has two parts of the
+As shown in the above figure, the Transformer model also has two parts of the
 conventional machine translation architecutres; the left-side is the encoder,
 and the right-side is the decoder. The input/output sequences are mapped to
-token representations. Since, we do not have a reccurrence network in this
-model, each token does not contain any sequential position information.
-Hence, we provide additional information via positional encoding which
-encodes where the current token occurs in the sequence.
+token representations. In an attention-based model, we do not have a
+reccurrence network, hence, each token does not contain any positional
+information in its sequence. Thus, we provide additional information via
+positional encoding which encodes where the current token occurs in the
+sequence. If you need more details on this, please refer to the original paper.
 
-Now, the embeddings are passed through the multiple layers of the Transformer blocks.
-Each block has two layers; Multi-Head Attention layer and feed forward layer.
-Each of these layers has residual connection followed by a normalization procedure.
-The fundamental idea of attention mechanism is implemented in this Multi-Head Attention layer.
+Now, the embeddings are passed through the multiple layers of the Transformer
+blocks. Each block has two layers; (1) Multi-Head Attention layer and (2) feed
+forward layer. Each of these layers has residual connection followed by a
+normalization procedure. The fundamental idea of attention mechanism is
+implemented in this Multi-Head Attention layer.
 
 #### Multi-Head Attention
-A multi-head attention layer reads in a sequence of words and computes how relevant each token is to the given sequence.
-We have concepts for the information to be interpreted in three different aspects; *query*, *key*, and *value*.
-Intuitively, the *query (Q)* represents the information we are looking for, the *key (K)* represents the information for computing the relevancy to other words, and the *value (V)* represents the actual value of the input sequence.
 
-The relevancy between tokens are calculated by the dot product between $Q$ and $K$ vectors. 
-In fact, this should be interpreted as the similarity between two vectors, which is used as the attentions score between two tokens.
-Then, the score is divided by the squre root of the dimension of the key vector for gradient stability.
-Applying softmax returns the normalized scores.
-Finally, the actual value $(V)$ of the input sequence is weighted by the attention score.
-Formally, this entire procedure can be defined as below:
+A multi-head attention layer reads in a sequence of words and computes how
+relevant each token is to its given sequence. Each attention head reads the
+sequence of words and interpretes them in three different aspects; *query*,
+*key*, and *value*. Intuitively, the *query (Q)* represents the information we
+are looking for, the *key (K)* represents the information for computing the
+relevancy to other words, and the *value (V)* represents the actual value of
+the input sequence.
+
+The relevancy between tokens are calculated by the dot product between $Q$
+and $K$ vectors. In fact, this should be interpreted as the similarity
+between the two vectors, which is used as the attentions score between two
+words. Then, the score is divided by the squre root of the dimension of the
+key vector for gradient stability. Applying softmax returns the normalized
+scores. Finally, the actual value $V$ of the input sequence is weighted by
+the attention score. Formally, this entire procedure can be defined as below:
 
 $$
 Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
+This attention function is applied multipe times on the same input sequence,
+and the output results are concatednated. The following feedforward layer
+projects the outputs once again and pass it to the next following transformer
+block.
 
 
-unidirection/bidirection how to train
 
+### Training the Language Model
+
+BERT is trained using two different prediction tasks: (1) Masked Language
+Model (MLM) and (2) Next Sentence Prediction (NSP). In MLM, a certain
+percentage of the input tokens are masked at ranom. The objective is to
+predict the masked tokens given the surrounding words. In NSP, an example
+consists of two spans of sentences sampled from a monolingual corpus. 50% of
+the examples are consecutive spans and the others are randoms sentences. The
+objective of the model is to predict whether a sentence of an example is the
+next following sentence of the other or not.
+
+After the language model is trained, BERT can be adopted for an NLP
+task which model adds a small number of parameters just for the task.
+In the following fine-tuning procedure, all of the parameters of BERT and the
+additional layers are fine-tuned jointly to maximize its objective function.
 
 ### External Links
 
 * [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
+* [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
+* [BERT git repo by Google-Research](https://github.com/google-research/bert)
 
 
 # References
