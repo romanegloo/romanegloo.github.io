@@ -4,27 +4,27 @@ title: "Word Embeddings"
 date: 2019-11-01
 ---
 
-http://www.davidsbatista.net/blog/2018/12/06/Word_Embeddings/
+<!-- http://www.davidsbatista.net/blog/2018/12/06/Word_Embeddings/ -->
 
 
-With the rise of the Deep Learning paradigm, the methodology in NLP tasks has gone
-through a huge transition; Most of the recent research efforts are in deep
-neural network-based approaches with which replaced rather complicated feature
-engineering methods. The use of deep learning methods in NLP tasks requires a
-computational way of representing words semantically. Hence, such models start
-with some kind of word representations (embeddings) at the bottom of its
-architecture.
+With the rise of the Deep Learning paradigm, the methodology in NLP tasks has
+gone through a huge transition; Most of the recent research efforts are in
+deep neural network-based approaches with which replaced rather complicated
+feature engineering methods. The use of deep learning methods in NLP tasks
+requires a computational way of representing words semantically. Hence, such
+models start with some kind of word representations (embeddings) at the
+bottom of its architecture.
 
 Word2vec by Mikolov et al. is one of the first word embeddings which gained
 huge popularity in NLP and other related communities. Since the work of
 Word2vec, numerous kinds of word embeddings have been proposed. Though all
 the word embeddings have the same purpose of representing words in vector
-format, there are different types of word embeddings depending on what kind of
-information is used for training the representations. The unit of information
-can be at the level of characters, words, or sequence of words in language
-models. You can also utilize other hierarchical knowledge information of words
-or entities from external sources.  In this post, I will review the methods of
-training word embeddings starting with Word2vec.
+format, there are different types of word embeddings depending on what kind
+of information is used for training the representations. The unit of
+information can be at the level of characters, words, or sequence of words in
+language models. You can also utilize other hierarchical knowledge
+information of words or entities from external sources. In this post, I will
+review the methods of training word embeddings starting with Word2vec.
 
 # Introduction
 
@@ -35,8 +35,8 @@ al.](http://me.jiho.us/bookmarks.html), and the gist of it has not been changed
 drastically until now; We encode words into fixed-length vector representations
 which can be used to solve many computational linguistic problems such as
 question answering, text classfication, language translations, and so on. This
-encoding model is based on the distributional hypothesis: linguistic items with
-similar distributions in the vector space have similar meanings.
+encoding model is based on the distributional hypothesis, "linguistic items with
+similar distributions in the vector space have similar meanings."
 
 <div class="text-center mb-5">
     <img src="https://me.jiho.us/images/posts/word-vectors-2d.png" 
@@ -64,11 +64,11 @@ into consideration to build the representation.
 In this post, specific examples of these techniques will be introduced,
 which include the followings:
 
-* *static word embeddings*
+* *Static Word Embeddings*
     * Word2vec
     * CharCNN
     * fastText
-* *contextualized word embeddings*
+* *Contextualized Word Embeddings*
     * Elmo
     * BERT
 
@@ -149,7 +149,7 @@ With this model, grammatical variations that share most of n-grams, and
 compound nouns are easy to model. As to the rest, it shares the same
 architecture of the Word2vec Skip-gram model.
 
-### Pointers
+### External Links
 
 * [Download fastText pre-trained model](https://fasttext.cc/)
 
@@ -170,27 +170,38 @@ word embeddings.
 *original papar:
 [Deep contextualized word representations](https://arxiv.org/pdf/1802.05365.pdf)*
 
-ELMo ("Embeddings from Language MOdels") is a deep contextualized word representation.
-ELMo models the characteristics of word use (syntax and semantics) and polysemy (different uses of words across linguistics contexts).
-These word vectors are computed from the internal states of a two layers bidirectional language model (biLM), which is pre-trained on a large text corpus.
-Different layers of the language models encode different linguistic aspects on the word; For example, Part-Of-Speech is better encoded by the lower-level layers, while word-sense disambiguation is better predicted in the higher-level layers.
+ELMo ("Embeddings from Language MOdels") is a deep contextualized word
+representation. ELMo models the characteristics of word use (syntax and
+semantics) and polysemy (different uses of words across linguistics
+contexts). These word vectors are computed from the internal states of a two
+layers bidirectional language model (biLM), which is pre-trained on a large
+text corpus. Different layers of the language models encode different
+linguistic aspects on the word; For example, Part-Of-Speech is better encoded
+by the lower-level layers, while word-sense disambiguation is better
+predicted in the higher-level layers.
 
 <div class="text-center mb-5">
   <img src="https://me.jiho.us/images/posts/taglm.png"
-       class="img-fluid" alt="Model Architecture of TagLM"/>
+       class="img-fluid" alt="Model Architecture of TagLM"
+       style="max-width:80%"/>
   <div class="caption text-center">
     Figure. Model Architecture of TagLM (image from this
     [<a href="https://arxiv.org/pdf/1705.00108.pdf">paper</a>])
   </div>
 </div>
 
-The above figure illustrates how a word in its context is tranformed into a contextualized embeddings and how the contextualized embeddings are being used along with the context-independent embeddings by concatenation. 
+The above figure illustrates how a word in its context is tranformed into a
+contextualized embeddings and how the contextualized embeddings are being
+used along with the context-independent embeddings by concatenation in a
+specific NLP task.
 
-Right side of the figure is a pre-trained bi-drectional language model (biLM).
-The contextualized embeddings can be constructed by computing the weighted-average of the intermediate layer representations of the language model.
-The weights are optimized to a specific task. 
+Right side of the figure is a pre-trained bi-drectional language model
+(biLM). The contextualized embeddings can be constructed by computing the
+weighted-average of the intermediate layer representations of the language
+model. The weights are optimized to a specific task.
 
-As formally described in the paper, each word representation is computed as below:
+As formally described in the paper, each word representation is computed as
+below:
 
 $$
 ELMo_k  = \gamma^{task} \sum_{j=0}^L s_j^{task} h_{k,j}^{LM}
@@ -200,7 +211,7 @@ $$
 * $s^{task}$ are softmax-normalized weights,
 * the scalar parameter $\gamma^{task}$ allows the task model to scale the entire ELMo vector.
 
-### Pointers
+### External Links
 
 * [ELMo at AllenNLP](https://github.com/allenai/allennlp/blob/master/tutorials/how_to/elmo.md)
 
@@ -208,35 +219,47 @@ $$
 ## BERT: Bidrirectional Encode Representations from Transformers
 
 *original paper:
-[BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)*
+[BERT: Pre-training of Deep Bidirectional Transformers for Language
+Understanding](https://arxiv.org/pdf/1810.04805.pdf)*
 
-BERT is another method of training language model, which is composed of the Transformer encoders.
+BERT is another method of training language model, which is composed of the
+Transformer encoders.
 
 ### The Transformer: 
-This method is first introduced in the [Attention is All You Need](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf) paper.
-In 2017, a Google Brain team (Vaswani et al.) proposed this network for machine translation.
-Traditionally, for language translation, RNNs were used for encoding a seqauence of words.
-In Transformer, the recurrence component is replaced with multi-layer attention encoders.
 
-There are several issues with the RNN type language modeling architectures, which Transformer-based models were able to resolve.
+This method is first introduced in the 
+[Attention is All You Need](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)
+paper. In 2017, a Google Brain team (Vaswani et al.) proposed this network
+for machine translation. Traditionally, for language translation, RNNs were
+used for encoding a seqauence of words. In Transformer, the recurrence
+component is replaced with multi-layer attention encoders.
 
-1. RNNs are difficult to parallelize for the computation in GPUs. 
-   That is, the current state of the recurrence is dependent on the previous state.
-2. RNNs are hard to maintain the previously encoded knowledge in long-range sequence throughout the recurrence.
-   Attention mechanisms allow modeling dependencies without regard to their distance in the input or output sequence.
+There are several issues with the RNN-based language modeling architectures,
+which Transformer-based models were able to resolve.
+
+1. RNNs are difficult to parallelize computations to utilize GPU capability.
+That is, the current state of the recurrence is dependent on the previous
+state.
+2. RNNs are hard to maintain the previously encoded knowledge in long-range
+sequence throughout the recurrence. Attention mechanisms allow modeling
+dependencies without regard to their distance in the input or output
+sequence.
 
 <div class="text-center mb-5">
   <img src="https://me.jiho.us/images/posts/transformer.png"
-       class="img-fluid" alt="The Transformer"/>
+       class="img-fluid" alt="The Transformer" style="max-height:500px;"/>
   <div class="caption text-center">
     Figure, The Transformer (image from the original paper)
   </div>
 </div>
 
-As seen in the above figure, the Transformer also has two parts of the conventional machine translation architecutres; the left-side is the encoder, and the right-side is the decoder. 
-The input/output sequences are mapped to token representations.
-Since, we do not have a reccurrence network in this model, each token does not contain any sequential position information.
-Hence, we provide additional information via positional encoding which encodes where the current token occurs in the sequence.
+As seen in the above figure, the Transformer also has two parts of the
+conventional machine translation architecutres; the left-side is the encoder,
+and the right-side is the decoder. The input/output sequences are mapped to
+token representations. Since, we do not have a reccurrence network in this
+model, each token does not contain any sequential position information.
+Hence, we provide additional information via positional encoding which
+encodes where the current token occurs in the sequence.
 
 Now, the embeddings are passed through the multiple layers of the Transformer blocks.
 Each block has two layers; Multi-Head Attention layer and feed forward layer.
@@ -245,13 +268,14 @@ The fundamental idea of attention mechanism is implemented in this Multi-Head At
 
 #### Multi-Head Attention
 A multi-head attention layer reads in a sequence of words and computes how relevant each token is to the given sequence.
-We have three concepts to interpret the information in different aspects; *query*, *key*, and *value*.
+We have concepts for the information to be interpreted in three different aspects; *query*, *key*, and *value*.
 Intuitively, the *query (Q)* represents the information we are looking for, the *key (K)* represents the information for computing the relevancy to other words, and the *value (V)* represents the actual value of the input sequence.
 
-The relevancy between tokens are calculated by the dot product between $Q$ and $K$. 
+The relevancy between tokens are calculated by the dot product between $Q$ and $K$ vectors. 
 In fact, this should be interpreted as the similarity between two vectors, which is used as the attentions score between two tokens.
-Then, the score is divided by the squre root of the dimension of the key vector for having more stable gradient.
-Applying softmax returns the normalized scores. Finally, the actual value $(V)$ of the input sequence is then weighted by the normalized score.
+Then, the score is divided by the squre root of the dimension of the key vector for gradient stability.
+Applying softmax returns the normalized scores.
+Finally, the actual value $(V)$ of the input sequence is weighted by the attention score.
 Formally, this entire procedure can be defined as below:
 
 $$
@@ -263,7 +287,7 @@ $$
 unidirection/bidirection how to train
 
 
-### Pointers
+### External Links
 
 * [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
 
