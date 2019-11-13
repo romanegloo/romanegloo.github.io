@@ -207,9 +207,9 @@ $$
 ELMo_k  = \gamma^{task} \sum_{j=0}^L s_j^{task} h_{k,j}^{LM}
 $$
 
-* $h_{k,j}^{LM}$ is the concatenated hidden outputs of each biLSTM layer,
-* $s^{task}$ are softmax-normalized weights,
-* the scalar parameter $\gamma^{task}$ allows the task model to scale the entire ELMo vector.
+* $$h_{k,j}^{LM}$$ is the concatenated hidden outputs of each biLSTM layer,
+* $$s^{task}$$ are softmax-normalized weights,
+* the scalar parameter $$\gamma^{task}$ allow$s the task model to scale the entire ELMo vector.
 
 ### External Links
 
