@@ -278,12 +278,12 @@ are looking for, the *key (K)* represents the information for computing the
 relevancy to other words, and the *value (V)* represents the actual value of
 the input sequence.
 
-The relevancy between tokens are calculated by the dot product between $Q$
-and $K$ vectors. In fact, this should be interpreted as the similarity
+The relevancy between tokens are calculated by the dot product between *Q*
+and *K* vectors. In fact, this should be interpreted as the similarity
 between the two vectors, which is used as the attentions score between two
 words. Then, the score is divided by the squre root of the dimension of the
 key vector for gradient stability. Applying softmax returns the normalized
-scores. Finally, the actual value $V$ of the input sequence is weighted by
+scores. Finally, the actual value *V* of the input sequence is weighted by
 the attention score. Formally, this entire procedure can be defined as below:
 
 $$
