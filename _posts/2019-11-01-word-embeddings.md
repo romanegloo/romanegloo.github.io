@@ -4,24 +4,24 @@ title: "Word Embeddings"
 date: 2019-11-01
 ---
 
-With the rise of the Deep Learning paradigm, the methodology in NLP tasks has gone
-through a huge transition; Most of the recent research efforts are in deep
+With the rise of the Deep Learning paradigm, the methodology in NLP tasks has
+gone through a huge transition; Most of the recent research efforts are in deep
 neural network-based approaches with which replaced rather complicated feature
 engineering methods. The use of deep learning methods in NLP tasks requires a
 computational way of representing words semantically. Hence, such models start
 with some kind of word representations (embeddings) at the bottom of its
 architecture.
 
-Word2vec by Mikolov et al. is one of the first word embeddings which gained
-huge popularity in NLP and other related communities. Since the work of
-Word2vec, numerous kinds of word embeddings have been proposed. Though all
-the word embeddings have the same purpose of representing words in vector
-format, there are different types of word embeddings depending on what kind of
-information is used for training the representations. The unit of information
-can be at the level of characters, words, or sequence of words in language
-models. You can also utilize other hierarchical knowledge information of words
-or entities from external sources.  In this post, I will review the methods of
-training word embeddings starting with Word2vec.
+Word2vec by Mikolov et al. is one of the first word embeddings which gained huge
+popularity in NLP and other related communities. Since the work of Word2vec,
+numerous kinds of word embeddings have been proposed. Though all the word
+embeddings have the same purpose of representing words in vector format, there
+are different types of word embeddings depending on what kind of information is
+used for training the representations. The unit of information can be at the
+level of characters, words, or sequence of words in language models. You can
+also utilize other hierarchical knowledge information of words or entities from
+external sources.  In this post, I will review the methods of training word
+embeddings starting with Word2vec.
 
 # Introduction
 
@@ -53,8 +53,8 @@ representation regardless of the context where the word occurs in, and (2)
 **contextualised word embeddings** in which the context of a word is also taken
 into consideration to build the representation. 
 
-In this post, specific examples of these techniques will be introduced,
-which include the followings:
+In this post, specific examples of these techniques will be introduced, which
+include the followings:
 
 * *static word embeddings*
     * Word2vec
@@ -103,13 +103,13 @@ considering sub-word information in building word representations.
 *original paper: 
 [Character-level convolutional networks for text classification](https://papers.nips.cc/paper/5782-character-level-convolutional-networks-for-text-classification.pdf)*
 
-The authors of the *CharCNN* model claims that words can be represented by
-the use of character-level convolutional networks (ConvNets) for NLP tasks. The
+The authors of the *CharCNN* model claims that words can be represented by the
+use of character-level convolutional networks (ConvNets) for NLP tasks. The
 input sequence of words is mapped into the representations for its constituent
 characters. They fixed the set of characters to the union of 26 English
-characters, 10 digits, and 33 special characters. This model proved its
-strength in representing OOV words, misspelled words, new words, and emoticons.
-It also reduced model complexity by using a relatively small number of vector
+characters, 10 digits, and 33 special characters. This model proved its strength
+in representing OOV words, misspelled words, new words, and emoticons. It also
+reduced model complexity by using a relatively small number of vector
 representations. Following figure illustrates the CharCNN model.
 
 ![CharCNN Model](https://me.jiho.us/images/posts/CharCNN.png)  
