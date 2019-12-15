@@ -61,8 +61,8 @@ representation regardless of the context where the word occurs in, and (2)
 **contextualized word embeddings** in which the context of a word is also taken
 into consideration to build the representation. 
 
-In this post, specific examples of these techniques will be introduced,
-which include the followings:
+In this post, specific examples of these techniques will be introduced, which
+include the followings:
 
 * *Static Word Embeddings*
     * Word2vec
@@ -120,13 +120,13 @@ considering sub-word information in building word representations.
 *original paper: 
 [Character-level convolutional networks for text classification](https://papers.nips.cc/paper/5782-character-level-convolutional-networks-for-text-classification.pdf)*
 
-The authors of the *CharCNN* model claims that words can be represented by
-the use of character-level convolutional networks (ConvNets) for NLP tasks. The
+The authors of the *CharCNN* model claims that words can be represented by the
+use of character-level convolutional networks (ConvNets) for NLP tasks. The
 input sequence of words is mapped into the representations for its constituent
 characters. They fixed the set of characters to the union of 26 English
-characters, 10 digits, and 33 special characters. This model proved its
-strength in representing OOV words, misspelled words, new words, and emoticons.
-It also reduced model complexity by using a relatively small number of vector
+characters, 10 digits, and 33 special characters. This model proved its strength
+in representing OOV words, misspelled words, new words, and emoticons. It also
+reduced model complexity by using a relatively small number of vector
 representations. Following figure illustrates the CharCNN model.
 
 <div class="text-center mb-5">
