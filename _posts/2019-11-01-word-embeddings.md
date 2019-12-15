@@ -111,6 +111,10 @@ One limitation of this method is that this model can't handle OOV
 following two methods, *CharCNN* and *fastText*, address this issue by
 considering sub-word information in building word representations.
 
+### External Links
+
+* [Pre-trained Word2vec with Google News](https://code.google.com/archive/p/word2vec/)
+
 ## CharCNN
 
 *original paper: 
